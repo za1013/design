@@ -10,11 +10,24 @@
     box-sizing:border-box;
     background:none;
     width: 500px;
+    font-family: 'Grandstander', cursive;
 }
 
 @media (min-width:600px){
+    .file-result {
+        width: 600px;
+    }
     .card {
-        height: 350px;
+        height: 375px;
+    }
+}
+
+@media (min-width:900px){
+    .file-result {
+        width: 800px;
+    }
+    .card {
+        height: 500px;
     }
 }
 
@@ -84,11 +97,13 @@
     font-size:1.8rem;
     font-weight:700;
     line-height:1.2;
+    font-family: 'Grandstander', cursive;
 }
 
 .card p {
     font-size:1.4rem;
-    line-height:1.2;
+    line-height:1.4;
+    font-family: 'Grandstander', cursive;
 }
 
 .card .card_btn {
