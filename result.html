@@ -2,12 +2,13 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/index.css">
-    <link rel="stylesheet" href="assets/css/result.css" >
-    <link href="https://fonts.googleapis.com/css2?family=Grandstander&display=swap" rel="stylesheet">
-    <title>Upload</title>
+    <title>Personal Shopper AI</title>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1 , shrink-to-fit=no" />
+    <link rel="stylesheet" href="/static/index.css">
+    <link rel="stylesheet" href="/static/result.css">
+    <link rel="icon" href="/static/favicon.ico" />
 </head>
 
 <body>
@@ -15,26 +16,27 @@
         <div class="bg"></div>
         <div class="logo_area">
             <h1 class="logo_default">
-              <a href="#" class="logo">
-                <span class="blind">Personal Showpper</span>
-              </a>
+                <a href="#" class="logo">
+                    <span class="blind">Personal Showpper</span>
+                </a>
             </h1>
-          </div>
+        </div>
         <div class="container">
             <div class="file-result">
                 <div class="card">
                     <div class="card_bg"></div>
                     <div class="card_content">
+                        <div class="card_content_bg"></div>
                         <h2 class="title">Image</h2>
-                        <p class="category">category</p>
-                        <p class="style">style</p>
-                        <p class="color">color</p>
+                        <p class="category">category : {{category}}</p>
+                        <p class="style">style : {{style}}</p>
+                        <p class="color">color : {{color}}</p>
                         <button type="button" class="btn recommend">추천받기</button>
-                        <button type="button" class="btn retry">다시하기</button>
+                        <button type="button" class="btn retry"><a href="upload">다시하기</button>
                     </div>
                 </div>
             </div>
-            <div class="recom-result">
+            <div class="recom-result hide">
                 <div class="row">
                     <a href="#" class="img"></a>
                 </div>
@@ -47,7 +49,19 @@
             </div>
         </div>
     </div>
-
+    <script class="jsbin" src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script>
+        $('.card_bg').css({
+            'background-image': 'url({{ img_path }})'
+        })
+        $('.btn.recommend').click(() => {
+            const result = $('.recom-result')
+            if (result.hasClass('hide')) {
+                result.removeClass('hide')
+                result.addClass('show')
+            }
+        })
+    </script>
 </body>
 
 </html>

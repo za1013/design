@@ -26,3 +26,7 @@ $('.image-upload-wrap').bind('dragover',  () => {
 $('.image-upload-wrap').bind('dragleave', () => {
     $('.image-upload-wrap').removeClass('image-dropping');
 });
+
+$('.push-image').click((e) => {
+    $('.img-frm').submit()
+})
